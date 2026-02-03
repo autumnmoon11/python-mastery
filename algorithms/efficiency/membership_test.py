@@ -1,33 +1,33 @@
 import time
+import sys
+import os
+
+# Adding the root path so we can import our decorator from a different folder
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+from advanced_idioms.decorators.time_execution import time_execution_decorator
+
+@time_execution_decorator
+def check_list(data_list, target):
+    """Linear search (O(n))"""
+    return target in data_list
+
+@time_execution_decorator
+def check_set(data_set, target):
+    """Hash table lookup (O(1))"""
+    return target in data_set
 
 def run_benchmark():
-    # 1. Setup: Create 1 million items
     size = 1_000_000
     large_list = list(range(size))
     large_set = set(range(size))
-    
-    target = -1  # A value we know is NOT in either collection (Worst case scenario)
+    target = -1
 
     print(f"--- Benchmarking Membership Check (Size: {size:,}) ---")
+    
+    # The decorator handles the start/end time and the print statement
+    check_list(large_list, target)
+    check_set(large_set, target)
 
-    # 2. Test the List (O(n) - Linear Time)
-    start_list = time.perf_counter()
-    is_in_list = target in large_list
-    end_list = time.perf_counter()
-    list_time = end_list - start_list
-    print(f"List Lookup Time: {list_time:.6f} seconds")
-
-    # 3. Test the Set (O(1) - Constant Time)
-    start_set = time.perf_counter()
-    is_in_set = target in large_set
-    end_set = time.perf_counter()
-    set_time = end_set - start_set
-    print(f"Set Lookup Time:  {set_time:.6f} seconds")
-
-    # 4. Senior Analysis
-    if set_time > 0:
-        multiplier = list_time / set_time
-        print(f"\nResult: The Set was {multiplier:.1f}x faster than the List.")
 
 if __name__ == "__main__":
     run_benchmark()
