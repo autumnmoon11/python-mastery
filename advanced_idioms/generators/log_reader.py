@@ -6,6 +6,8 @@ def get_critical_errors(file_path: str) -> Generator[str, None, None]:
     Only yields lines containing 'CRITICAL'.
     """
     try:
+        # Context Manager ensures the file handle is automatically closed, 
+        # preventing memory leaks or file locks even if the generator is interrupted.
         with open(file_path, 'r') as file:
             for line in file:
                 if "CRITICAL" in line:
