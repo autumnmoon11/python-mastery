@@ -7,22 +7,24 @@ This repository serves as a centralized reference for advanced Pythonic engineer
 🏗️ Technical Pillars
 Design Patterns: Implementation of GoF and SOLID principles tailored for Python’s dynamic nature.
 
-Performance Optimization: Comparative analysis of data structures (e.g., Set vs. List) and memory-efficient generators.
+Performance Optimization: Comparative analysis of data structures (e.g., Set vs. List), O(log n) disk-based binary search, and memory-efficient generators.
+
+Concurrency & Parallelism: Strategic application of Threading vs. Multiprocessing for I/O-bound and CPU-bound workloads.
 
 Modern Standards: Leveraging dataclasses, enums, and Type Hinting to eliminate technical debt.
 
-Robust IO: Context managers and EAFP (Easier to Ask Forgiveness than Permission) patterns for resilient resource handling.
+Robust IO: Implementation of byte-offset seek/tell patterns and context managers for resilient, low-RAM resource handling.
 
 📂 Laboratory Structure
 /design_patterns: Strategic implementations of Strategy, Observer, and Factory patterns.
 
-/concurrency: Deep dives into asyncio and multi-threading for I/O-bound tasks.
+/concurrency: Comparative benchmarks of ThreadPool vs. ProcessPool executors for massive dataset processing.
 
 /advanced_idioms: Best-practice examples of decorators, context managers, and advanced dunder methods.
 
-/algorithms: Analysis of Big O complexity for core data manipulation tasks.
+/algorithms: Binary search implementations for both in-memory structures and large-scale file systems.
 
 🛠️ Usage
 Each module contains a standalone implementation and a README.md explaining the architectural "Why" behind the chosen pattern.
 
-Last Refined: January 2026
+Last Refined: February 2026
