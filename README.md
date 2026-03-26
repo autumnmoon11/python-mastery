@@ -14,14 +14,19 @@ This repository serves as a centralized reference for advanced Pythonic engineer
 - **Modern Standards:** Leveraging dataclasses, enums, and Type Hinting to eliminate technical debt.
 - **Robust IO:** Implementation of byte-offset seek/tell patterns and context managers for resilient, low-RAM resource handling.
 - **Recursive Logic:** Implementation of "Divide and Conquer" patterns, stack frame management, and pruning strategies for tree traversal.
+- **Memoization & Dynamic Programming:** Optimizing $O(2^n)$ recursive branching into $O(n)$ linear time using manual cache management and Python’s `@lru_cache` decorator.
 
 ## 📂 Laboratory Structure
 
 - **/design_patterns:** Strategic implementations of Strategy, Observer, and Factory patterns.
 - **/concurrency:** Comparative benchmarks of ThreadPool vs. ProcessPool executors for massive dataset processing.
 - **/advanced_idioms:** Best-practice examples of decorators, context managers, and advanced dunder methods.
-- **/algorithms/efficiency:** Binary search implementations for both in-memory structures and large-scale file systems.
-- **/algorithms/recursion:** Foundational labs on filesystem crawling, tree visualization, and mathematical recursion.
+- **/algorithms:**
+  - **/efficiency:** Binary search implementations for both in-memory structures and large-scale file systems.
+  - **/recursion:**
+    - `recursion_lab.py`: Filesystem crawling and visual tree mapping.
+    - `factorial_lab.py`: Linear recursion with defensive validation and guard clauses.
+    - `fibonacci_lab.py`: Comparative analysis of naive vs. memoized branching recursion.
 
 ## 🛠️ Usage
 
